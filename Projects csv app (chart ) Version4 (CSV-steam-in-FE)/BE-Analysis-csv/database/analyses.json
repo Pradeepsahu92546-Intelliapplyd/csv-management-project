@@ -1,0 +1,20 @@
+[
+  {
+    "id": "analysis1",
+    "unitId": "unit1",
+    "name": "Power Analysis",
+    "preconfigured": true
+  },
+  {
+    "id": "analysis2",
+    "unitId": "unit1",
+    "name": "Efficiency Analysis",
+    "preconfigured": false
+  },
+  {
+    "id": "analysis3",
+    "unitId": "unit1",
+    "name": "Temperature Analysis",
+    "preconfigured": false
+  }
+]

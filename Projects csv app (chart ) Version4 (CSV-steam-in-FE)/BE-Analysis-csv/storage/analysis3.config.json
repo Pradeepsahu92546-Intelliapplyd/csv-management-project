@@ -1,0 +1,25 @@
+{
+  "charts": [
+    {
+      "id": "89ec1d2b-6e21-4240-a1eb-843248dd8f5e",
+      "type": "line",
+      "xKey": "timestamp",
+      "yKey": "efficiency",
+      "table": 0
+    },
+    {
+      "id": "d11eddae-0781-4b91-8e0e-77553a1ee052",
+      "type": "line",
+      "xKey": "timestamp",
+      "yKey": "humidity-1",
+      "table": 1
+    },
+    {
+      "id": "d0ba0b42-0a72-4f27-b518-c834c5f44a32",
+      "type": "bar",
+      "xKey": "pressure-1",
+      "yKey": "efficiency-1",
+      "table": 1
+    }
+  ]
+}

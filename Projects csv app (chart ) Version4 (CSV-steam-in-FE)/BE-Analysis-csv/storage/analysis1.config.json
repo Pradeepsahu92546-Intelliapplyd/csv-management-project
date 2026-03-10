@@ -1,0 +1,18 @@
+{
+  "charts": [
+    {
+      "id": "5f0d69f7-7111-48bb-8971-bf2da3853d53",
+      "type": "line",
+      "xKey": "AT",
+      "yKey": "PE",
+      "table": 0
+    },
+    {
+      "id": "52bd3409-180a-4518-a676-e6be643532ff",
+      "type": "bar",
+      "xKey": "AP1",
+      "yKey": "PE1",
+      "table": 1
+    }
+  ]
+}
