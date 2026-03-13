@@ -1,0 +1,18 @@
+<div class="dashboard-header">
+    <h2>Analysis Dashboard</h2>
+    
+</div>
+<div class="charts-grid">
+    <div *ngFor="let chart of charts()" class="chart-container">
+
+        <app-bar-chart *ngIf="chart.type==='bar'" [data]="map(chart)" [xKey]="chart.xKey" [yKey]="chart.yKey">
+        </app-bar-chart>
+
+        <app-line-chart *ngIf="chart.type==='line'" [data]="map(chart)" [xKey]="chart.xKey" [yKey]="chart.yKey">
+        </app-line-chart>
+
+        <app-scatter-chart *ngIf="chart.type==='scatter'" [data]="map(chart)" [xKey]="chart.xKey" [yKey]="chart.yKey">
+        </app-scatter-chart>
+
+    </div>
+</div>

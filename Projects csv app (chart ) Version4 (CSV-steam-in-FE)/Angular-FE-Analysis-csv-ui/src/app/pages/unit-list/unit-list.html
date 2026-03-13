@@ -1,0 +1,25 @@
+<h2>Units</h2>
+
+<nz-table #basicTable [nzData]="units()" [nzBordered]="true">
+
+    <thead>
+        <tr>
+            <th nzWidth="25%">Unit ID</th>
+            <th nzWidth="50%">Unit Name</th>
+            <th nzWidth="25%">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let unit of basicTable.data">
+            <td>{{unit.id}}</td>
+            <td>{{unit.name}}</td>
+            <td>
+                <button nz-button nzType="primary" (click)="openAnalyses(unit.id)">
+                    View Analyses
+                </button>
+            </td>
+        </tr>
+    </tbody>
+
+</nz-table>

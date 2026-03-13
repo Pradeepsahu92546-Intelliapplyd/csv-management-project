@@ -1,0 +1,14 @@
+<div>
+  <button (click)="setFilter('hour')">Hourly</button>
+  <button (click)="setFilter('day')">Daily</button>
+  <button (click)="setFilter('month')">Monthly</button>
+</div>
+<div class="chart-info">
+  <span *ngIf="xKey" class="axis-label">X: <strong>{{ xKey }}</strong></span>
+  <span *ngIf="yKey" class="axis-label">Y: <strong>{{ yKey }}</strong></span>
+</div>
+<div class="data-size-control">
+  <label>Data Size: <span class="data-count">{{ dataSize }}</span> / {{ totalDataSize }}</label>
+  <input type="range" min="1" [max]="totalDataSize" [(ngModel)]="dataSize" (change)="onDataSizeChange(dataSize)" />
+</div>
+<div #chart></div>

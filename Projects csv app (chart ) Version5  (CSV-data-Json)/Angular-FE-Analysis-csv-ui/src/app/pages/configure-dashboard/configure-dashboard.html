@@ -1,0 +1,59 @@
+<div class="dashboard-config">
+    <h2>Configure Dashboard</h2>
+    <p style="color: #666; margin-bottom: 20px;">Add and configure multiple charts for your dashboard</p>
+
+    
+
+    <div *ngFor="let chart of charts(); let i = index" class="chart-config-card">
+        <div class="chart-header">
+            <h3>Chart {{ i + 1 }}</h3>
+            <button 
+                *ngIf="charts().length > 1"
+                nz-button 
+                nzType="text" 
+                nzDanger
+                (click)="removeChart(chart.id)"
+                nzSize="small">
+                Remove
+            </button>
+        </div>
+
+        <div>
+            <label>Chart Type</label>
+            <nz-select [(ngModel)]="chart.type">
+                <nz-option nzValue="bar" nzLabel="Bar"></nz-option>
+                <nz-option nzValue="line" nzLabel="Line"></nz-option>
+                <nz-option nzValue="scatter" nzLabel="Scatter"></nz-option>
+            </nz-select>
+        </div>
+        <div>
+            <label>Select Data Table</label>
+            <nz-select [(ngModel)]="chart.table">
+                <nz-option *ngFor="let t of allTables(); let ti = index" [nzValue]="ti" [nzLabel]="t.title || ('Table ' + (ti + 1))"></nz-option>
+            </nz-select>
+        </div>
+        <div>
+            <label>X Axis</label>
+            <nz-select [(ngModel)]="chart.xKey">
+                <nz-option nzValue="" nzLabel="Select column"></nz-option>
+                <nz-option *ngFor="let col of (allTables()[chart.table || 0]?.columns || [])" [nzValue]="col" [nzLabel]="col"></nz-option>
+            </nz-select>
+        </div>
+        <div>
+            <label>Y Axis</label>
+            <nz-select [(ngModel)]="chart.yKey">
+                <nz-option nzValue="" nzLabel="Select column"></nz-option>
+                <nz-option *ngFor="let col of (allTables()[chart.table || 0]?.columns || [])" [nzValue]="col" [nzLabel]="col"></nz-option>
+            </nz-select>
+        </div>
+    </div>
+
+    <div style="margin-top: 24px; display: flex; gap: 12px;">
+        <button nz-button (click)="addChart()">
+            + Add Chart
+        </button>
+        <button nz-button nzType="primary" (click)="save()">
+            Save Dashboard
+        </button>
+    </div>
+</div>

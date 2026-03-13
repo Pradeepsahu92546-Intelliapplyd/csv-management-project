@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Analyses for Unit: {{unitId}}</h2>
+
+    <nz-table [nzData]="analyses" [nzBordered]="true">
+
+        <thead>
+            <tr>
+                <th nzWidth="25%">Analysis ID</th>
+                <th nzWidth="50%">Analysis Name</th>
+                <th nzWidth="25%">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let analysis of analyses">
+                <td>{{analysis.id}}</td>
+                <td>{{analysis.name}}</td>
+                <td>
+
+                    <button nz-button nzType="primary" (click)="open(analysis.id)">
+                        Open Dashboard
+                    </button>
+                    <button nz-button (click)="downloadCsv(analysis.id)" style="margin-left:8px;">
+                        Download CSV
+                    </button>
+
+                </td>
+            </tr>
+        </tbody>
+
+    </nz-table>
+</div>
